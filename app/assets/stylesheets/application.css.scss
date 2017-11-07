@@ -1,0 +1,167 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+$navbar-default-bg: black;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap/theme";
+
+#logo {
+	float:  left;
+	font-size: 1.7em;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+#logo:hover {
+	color: #fff;
+	text-decoration: none
+
+}
+
+.center {
+
+	text-align: center;
+	text-decoration-color: black;
+}
+.center-block {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+}
+.jumbotron {
+
+	background-image: asset-url('ruby.webp');
+	background-size: cover;
+	height: 580px;
+	width: 1100px;
+
+}
+
+.jumbotron h1 {
+
+	margin-top: -10px;
+
+	color: #fff;
+
+	text-align: center;
+
+	margin-bottom: 10px;
+
+	letter-spacing: -1px;
+
+	font-weight: bold;
+
+}
+.jumbotron h2 {
+
+	color:  #ff0000;
+
+	margin-top: -10px;
+
+	text-align: center;
+
+	margin-bottom: 10px;
+
+	letter-spacing: -1px;
+
+	font-weight: bold;
+
+}
+
+
+.btn-xlarge {
+
+	font-size: 1.7em;
+
+	background-color: black;
+
+
+}
+
+.article-actions{
+
+	border-top: 1px solid  #eaeaea;
+
+	padding-top: 5px;
+
+}
+
+.description{
+
+	margin-top: 0;
+}
+
+.article-title {
+
+	font-weight: bold;
+	font-size:  1.5em;
+
+}
+
+.article-body{
+	border-top:  1px solid #eaeaea; 
+ 	padding-top: 15px; 
+ 	padding-bottom: 15px;
+
+}
+
+.articles-meta-details{
+	border-top: 1px solid #eaeaea;
+	margin-top: 15px;
+}
+.user-name{
+
+	font-weight: bold;
+	font-size:  1.5em;
+}
+.user-email{
+	border-top:  1px solid #eaeaea; 
+ 	padding-top: 15px; 
+ 	padding-bottom: 15px;
+}
+
+.user-email
+footer {
+ 	margin-top: 40px;
+
+ 	padding-top: 1px;
+
+ 	border-top: 1px solid #eaeaea;
+
+ 	color: #777;
+}
+
+footer a:hover{
+
+	color: #222;
+}
+
+footer small {
+
+	float: left;
+}
+
+footer ul {
+
+	float: right;
+	list-style: none;
+}
+
+footer ul li{
+	float: left;
+	margin-left: 15px;
+}

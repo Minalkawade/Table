@@ -1,0 +1,33 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1 align="center">All Alpha Bloggers</h1>
+<div align="center">
+  <%= will_paginate %><br>
+  <% @users.each do |user| %>
+  <ul class="listing">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="well well-lg well-offset-">
+        <li><img src="<%= user.image(:thumb)%>"></li>
+
+ 
+          <div class="user-name"><%= link_to  user.username, user_path(user) %>
+          </div>
+          <div class="user-email"><%= link_to  user.email %>
+          </div>
+          <div class="article-actions">
+              <%= link_to 'Edit', edit_user_path(user),class: "btn btn-xs btn-primary" %>
+              <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-xs btn-danger" %>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </ul>
+    <% end %>
+
+    <div align="center">
+  <%= will_paginate %><br>
+</div>
+<!-- <br>
+<%= link_to 'Sign Up', new_user_path %> -->
+
