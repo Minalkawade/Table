@@ -6,3 +6,19 @@
 	<% end %>
 </ul>
 <% end %>
+def confirm_email
+    @user = User.find_by_confirmation_token_and_email(params[:confirmation_token], params[:email])
+    puts "hiiiiiiiiiiiii"
+    puts params[:confirmation_token]
+    puts params[:email]
+    puts @user
+    if @user 
+     user.validate_email
+      @user.save
+       flash[:success]= "welcome to my app!!"
+       redirect_to root_path
+    else
+     flash[:danger] = "Sorry. User does not exist"
+     redirect_to root_path
+   end
+ end

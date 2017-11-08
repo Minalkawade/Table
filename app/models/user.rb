@@ -1,14 +1,8 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  # devise :database_authenticatable, :registerable,
-  #        :recoverable, :rememberable, :trackable, :validatable
 	has_many :articles
-	 # devise :database_authenticatable, :registerable,
-  #    :recoverable, :rememberable, :trackable, :validatable
 
 	before_save {self.email = email.downcase}
-
+	before_create :confirmation_token
 	validates :username, presence: true,
 			   uniqueness: {case_sensitive: false},
 			   length: {minimum: 3, maximum: 50}
@@ -25,11 +19,11 @@ class User < ApplicationRecord
   	has_attached_file :document
 	validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 
-
 	
 	def validate_email
 		self.email_confirmed = true
 		self.confirmation_token = nil
+		save!(:validate => false)
 	end
 
 
@@ -41,8 +35,6 @@ class User < ApplicationRecord
           flash = self.confirmation_token
       end
     end
-
-
 end
 
 

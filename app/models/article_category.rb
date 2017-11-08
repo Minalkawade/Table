@@ -1,0 +1,5 @@
+class ArticleCategory < ApplicationRecord
+
+	
+	
+end

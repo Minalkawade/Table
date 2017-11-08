@@ -5,15 +5,14 @@
    </head>
    
    <body>
-      <h1>Welcome to Alpha blog, <%= @user.username %>,<%= @user.token_no></h1>
-      <%  %>
-      
-   
-      
-      <p>
+      <h1>Welcome to Ener the link below, <%= @user.username %></h1>
+       
+    <!--   <p>
          To login to the site, just follow this link: 
-         <%= @url %>.
-      </p>
+         <%#=  %>.
+      </p> -->
+
+      <a href="http://localhost:3000/user_conf/<%= @user.confirmation_token %>/<%= @user.email %>"><button>Click here to activate</button> </a>
       
       <p>Thanks for joining and have a great day!</p>
       

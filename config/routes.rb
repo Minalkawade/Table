@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  resources :article_categories
+  resources :categories
   #devise_for :users
   	 resources :users
      resources :articles
      # devise_for :sessions
-
+     resources :sessions
+     resources :users 
      root :to => 'sessions#show'
 
      get 'signup', to: 'users#new'
@@ -13,7 +16,8 @@ Rails.application.routes.draw do
      post 'login', to: 'sessions#create'
      delete 'logout', to: 'sessions#destroy'
 
-     get '/:token(confirm_email)/', to: "users#confirm_email", as: 'confirm_email'
-
+     #get 'user_conf/:confirmation_token/:email', to: "users#confirm_email"
+     match 'user_conf/:confirmation_token/:email' => "users#confirm_email",
+       :constraints => { :email => /.+@.+\..*/ } , via: [:get]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
